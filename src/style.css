@@ -31,20 +31,18 @@ body {
     margin: 0;
 }
 
-.nav li {
+.nav ul li {
     display: inline;
-    margin-right: 20px;
 }
 
-.nav ul li a:hover {
-    background-color: #fff;
+.nav ul li:not(:last-child) {
+    margin-right: 20px;
 }
 
 .nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    transition: background-color 0.5s ease;
 }
 
 .nav ul li a img {
@@ -52,4 +50,28 @@ body {
     margin-right: 8px;
     color: white;
     vertical-align: text-top;
+}
+
+.nav ul li a {
+    display: inline-block;
+    position: relative;
+    color: #ffffff;
+}
+  
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.38s ease;
+}
+  
+.nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
