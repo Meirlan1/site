@@ -3,11 +3,22 @@
     src: url("fonts/Roboto-Regular.ttf");
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'roboto', sans-serif;
-    background-color: #000;
+    background: radial-gradient(ellipse at right top, #151541 0%, #000000 100%);
+    height: 2500px;
+    overflow: hidden;
 }
 
 .header {
@@ -25,45 +36,43 @@ body {
     font-weight: bold;
 }
 
-.nav ul {
+.nav-ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.nav ul li {
+.nav-el {
     display: inline;
 }
 
-.nav ul li:not(:last-child) {
+.nav-el:not(:last-child) {
     margin-right: 20px;
 }
 
-.nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-.nav ul li a img {
+.nav-el>a>img {
     height: 17px;
     margin-right: 8px;
     color: white;
     vertical-align: text-top;
 }
 
-.nav ul li a {
+.nav-el>a {
     display: inline-block;
     position: relative;
     color: #ffffff;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
 }
+
   
-.nav ul li a::after {
+.undr-l-a>a::after {
     content: '';
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
+    height: 3px;
     bottom: -6px;
     left: 0;
     background-color: #ffffff;
@@ -71,7 +80,46 @@ body {
     transition: transform 0.38s ease;
 }
   
-.nav ul li a:hover::after {
+.undr-l-a>a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.lang-li:hover .lang-list {
+    display: block;
+    animation: fadeIn 0.75s;
+}
+
+.lang-li {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-list {
+    display: none;
+    height: 0;
+    border-radius: 15%;
+    background-color: rgba(8, 0, 83, 0.331);
+    width: 100%;
+    padding-top: 13px;
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    padding-bottom: 100px;
+}
+
+.lang-list-li>a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: 400;
+}
+
+.lang-list-ul {
+    padding: 0;
+    list-style: none;
+}
+
+.lang-li>a>img {
+    
 }
