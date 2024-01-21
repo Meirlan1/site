@@ -21,8 +21,8 @@ body {
     overflow: hidden;
 }
 
+/* Header */
 .header {
-    background-color: rgba(12, 12, 12, 0);
     color: #fff;
     padding: 15px;
     text-align: center;
@@ -33,7 +33,6 @@ body {
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
 }
 
 .nav-ul {
@@ -63,16 +62,16 @@ body {
     color: #ffffff;
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
 }
 
-  
+
+/* Nav element's hover animation */
 .undr-l-a>a::after {
     content: '';
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 3px;
+    height: 1.5px;
     bottom: -6px;
     left: 0;
     background-color: #ffffff;
@@ -85,41 +84,50 @@ body {
     transform-origin: bottom left;
 }
 
-.lang-li:hover .lang-list {
-    display: block;
-    animation: fadeIn 0.75s;
-}
-
-.lang-li {
-    position: relative;
-    display: inline-block;
-}
-
-.lang-list {
-    display: none;
-    height: 0;
-    border-radius: 15%;
-    background-color: rgba(8, 0, 83, 0.331);
-    width: 100%;
-    padding-top: 13px;
+/* Footer */
+.footer {
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    color: white;
+    display: flex;
     position: absolute;
-    z-index: 10;
-    background-color: white;
-    padding-bottom: 100px;
+    width: 100%;
+    height: 190px;
+    bottom: 0;
 }
 
-.lang-list-li>a {
-    text-decoration: none;
-    color: black;
-    font-size: large;
-    font-weight: 400;
-}
-
-.lang-list-ul {
+.soc-links {
     padding: 0;
+}
+
+.soc-link {
     list-style: none;
 }
 
-.lang-li>a>img {
-    
+.soc-link>a {
+    text-decoration: none;
+}
+
+.soc-link>a>img {
+    height: 25px;
+    width: 25px;
+}
+
+.soc-p {
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+.soc-text {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+/* Main content */
+
+.main-content {
+    position: relative;
+    min-height: 100vh;
 }
