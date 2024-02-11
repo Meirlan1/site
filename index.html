@@ -1,3 +1,17 @@
+<!--
+
+Copyright © 2024 Meirlan
+
+This code is provided without any explicit license.
+You may use, modify, and distribute this code at your own risk and discretion,
+provided that you retain this copyright notice.
+Please include the author's name, Meirlan, in any derivative works or distributions.
+
+Repository:
+https://github.com/Meirlan1/site
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +19,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Build Master</title>
     <style>
-        /* Including Uicons // https://www.flaticon.com/uicons*/
-        @import "~@flaticon/flaticon-uicons/css/all/all";
-
         @font-face {
             font-family: Roboto-Black;
             src: url("fonts/Roboto-Black.ttf");
@@ -79,7 +90,7 @@
             padding: 0;
             font-family: "Roboto-Regular";
             font-weight: 500;
-            background: radial-gradient(ellipse at 0% 30%, rgba(50, 5, 42, 0.75) 0%, rgba(7, 7, 62, 0.75) 25%, rgba(50, 4, 4, 0.75) 100%), url("images/space_bg_1.jpg");
+            background: radial-gradient(ellipse at 0% 30%, rgba(50, 5, 42, 0.75) 0%, rgba(7, 7, 62, 0.75) 25%, rgba(50, 4, 4, 0.75) 100%), url("https://meirlan1.github.io/site/images/space_bg_1.jpg");
             height: 100%;
             min-height: 100vh;
             color: white;
@@ -103,28 +114,21 @@
             font-size: 24px;
         }
 
-        .nav-ul {
+        .nav>ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .nav-el {
+        .nav>ul>li {
             display: inline;
         }
 
-        .nav-el:not(:last-child) {
+        .nav>ul>li:not(:last-child) {
             margin-right: 20px;
         }
 
-        .nav-el>a>img {
-            height: 17px;
-            margin-right: 8px;
-            color: white;
-            vertical-align: text-top;
-        }
-
-        .nav-el>a {
+        .nav>ul>li>a {
             display: inline-block;
             position: relative;
             color: #ffffff;
@@ -132,9 +136,13 @@
             color: #fff;
         }
 
+        .nav-icon {
+        }
+
+
 
         /* Nav hover animation*/
-        .undr-l-a>a::after {
+        .nav>ul>li>a::after {
             content: '';
             position: absolute;
             width: 100%;
@@ -147,7 +155,7 @@
             transition: transform 0.38s ease;
         }
         
-        .undr-l-a>a:hover::after {
+        .nav>ul>li>a:hover::after {
             transform: scaleX(1);
             transform-origin: bottom left;
         }
@@ -167,17 +175,12 @@
             padding: 0;
         }
 
-        .soc-link {
+        .soc-links>li {
             list-style: none;
         }
 
-        .soc-link>a {
+        .soc-links>li>a {
             text-decoration: none;
-        }
-
-        .soc-link>a>img {
-            height: 25px;
-            width: 25px;
         }
 
         .soc-p {
@@ -188,6 +191,21 @@
         .soc-text {
             font-size: 0.8em;
             margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links>li>a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .soc-links>li>a>img[alt="github-logo"] {
+            width: 30px;
+            height: 30px;
         }
 
         /* Main content */
@@ -239,84 +257,122 @@
             font-weight: 100;
         }
     </style>
-    <link href="/your-path-to-uicons/css/uicons-rounded-regular.css" rel="stylesheet">
-</head>
+    <link rel="icon" type="image/x-icon" href="icons/gaming-pc-white.png">
+    <link href="https://meirlan1.github.io/site/uicons/css/all/all.css" rel="stylesheet">
+
+    </head>
 <body>
     <header class="header">
+
         <div class="logo">
             BuildMaster
         </div>
+        
         <nav class="nav">
             <ul class="nav-ul">
 
-                <li class="nav-el undr-l-a">
+                <li>
                     <a href="index.html">
-                        <i class="fi fi-rr-square-right"></i>
-                        <img src="icons/white/icon-home.svg" alt="home-icon">
+                        <i class="fi fi-rr-home"></i>
                         Home
                     </a>
                 </li>
 
-                <li class="nav-el undr-l-a">
+                <li>
                     <a href="#">
-                        <img src="icons/white/icon-info.svg" alt="info-icon">
+                        <i class="fi fi-rr-memory nav-icon"></i>
                         Products
                     </a>
                 </li>
 
-                <li class="nav-el undr-l-a">
+                <li>
                     <a href="#">
-                        <img src="" alt="">
-                        Accessories
-                    </a>
-                </li>
-
-                <li class="nav-el undr-l-a">
-                    <a href="#">
-                        <img src="" alt="">
+                        <i class="fi fi-rr-percentage nav-icon"></i>
                         Special Offers
                     </a>
                 </li>
 
-                <li class="nav-el undr-l-a">
+                <li>
                     <a href="#">
-                        <img src="" alt="">
-                        Contact
+                        <i class="fi fi-rr-interrogation nav-icon"></i>
+                        About
                     </a>
                 </li>
 
             </ul>
         </nav>
+
     </header>
     
     <div class="main-content">
+
         <div class="math-info">
 
         </div>
+
         <div class="carousel">
-            <h1>Math's 10 areas</h1>
+            <h1>What's inside the pc?</h1>
             <div class="slider">
                 <div class="slider-items">
                     <div>
-                        <h1>Number theory</h1>
-                        <p>Number theory (or arithmetic or higher arithmetic in older usage) is a branch of pure mathematics devoted primarily to the study of the integers and arithmetic functions.</p>
+                        <h2>CPU</h2>
+                        <p>Also called a central processor or main processor—is the most important processor in a given computer. Its electronic circuitry executes instructions of a computer program, such as arithmetic, logic, controlling, and input/output (I/O) operations. This role contrasts with that of external components, such as main memory and I/O circuitry,[1] and specialized coprocessors such as graphics processing units (GPUs).</p>
                     </div>
+
+                    <div>
+                        <h2>GPU</h2>
+                        <p>A graphics processing unit (GPU) is a specialized electronic circuit initially designed to accelerate computer graphics and image processing (either on a video card or embedded on motherboards, mobile phones, personal computers, workstations, and game consoles).</p>
+                    </div>
+
+                    <div>
+                        <h2>RAM</h2>
+                        <p></p>
+                    </div>
+
+                    <div>
+                        <h2>ROM</h2>
+                        <p></p>
+                    </div>
+
+                    <div>
+                        <h2>Motherboard</h2>
+                        <p></p>
+                    </div>
+
+                    <div>
+                        <h2>Cooler</h2>
+                        <p></p>
+                    </div>
+
+                    <div>
+                        <h2>Power supply</h2>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
     <footer class="footer">
+
         <p class="soc-p">Text</p>
+
         <p class="soc-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, perferendis.</p>
-        <ul>
+        
+        <ul class="footer-links">
             <li>
                 Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
             </li>
         </ul>
+
         <ul class="soc-links">
-            <li class="soc-link"><a href="https://github.com/Meirlan1"><img src="https://meirlan1.github.io/site/icons/white/github-mark-white.svg" alt="github-icon"></a></li>
+            <li>
+                <a href="https://github.com/Meirlan1">
+                    <img src="icons/github-mark-white.svg" alt="github-logo">
+                </a>
+            </li>
         </ul>
+
     </footer>
 
     <script>
@@ -329,7 +385,7 @@
             carouselContent.forEach(item => {
                 const dublicatedItem = item.cloneNode(true);
                 carouselInner.appendChild(dublicatedItem);
-                carouselInner.style.animation = "move 1000s linear infinite";
+                carouselInner.style.animation = "move 100s linear infinite";
             });
         });
     </script>
