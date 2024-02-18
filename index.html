@@ -90,14 +90,21 @@ https://github.com/Meirlan1/site
             padding: 0;
             font-family: "Roboto-Regular";
             font-weight: 500;
-            background: radial-gradient(ellipse at 0% 30%, rgba(50, 5, 42, 0.75) 0%, rgba(7, 7, 62, 0.75) 25%, rgba(50, 4, 4, 0.75) 100%), url("https://meirlan1.github.io/site/images/space_bg_1.jpg");
+            background-color: black;
+            background: radial-gradient(ellipse at 0% 20%, rgb(60, 6, 50) 0%, rgb(5, 5, 52) 25%, rgb(73, 11, 11) 100%);
             height: 100%;
             min-height: 100vh;
             color: white;
         }
 
+
         ::-webkit-scrollbar {
             display: none;
+        }
+
+        .container {
+            width: 80%;
+            align-self: center;
         }
 
         /* Header */
@@ -139,6 +146,33 @@ https://github.com/Meirlan1/site
         .nav-icon {
         }
 
+        .nav-mobile-icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav-ul {
+                display: none;
+            }
+            .nav-mobile-icon {
+                display: block;
+                float: right;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav.responsive {position: relative;}
+            .nav.responsive a.nav-mobile-icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .nav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
 
 
         /* Nav hover animation*/
@@ -168,7 +202,7 @@ https://github.com/Meirlan1/site
             flex-direction: column;
             color: white;
             display: flex;
-            margin-top: auto;
+            margin-top: 50px;
         }
 
         .soc-links {
@@ -183,14 +217,15 @@ https://github.com/Meirlan1/site
             text-decoration: none;
         }
 
-        .soc-p {
-            font-size: 1.4em;
-            margin-top: 0;
-        }
 
-        .soc-text {
+        .gpt-text {
             font-size: 0.8em;
             margin: 0;
+        }
+
+        .gpt-text>a {
+            text-decoration: none;
+            color: white;
         }
 
         .footer-links {
@@ -203,20 +238,34 @@ https://github.com/Meirlan1/site
             color: white;
         }
 
-        .soc-links>li>a>img[alt="github-logo"] {
-            width: 30px;
-            height: 30px;
+        .footer-icons {
+            text-decoration: none;
+            color: white;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .footer-icons>i {
+            font-size: 25px;
         }
 
         /* Main content */
 
         .main-content {
+            
+            align-items: center;
+            justify-content: space-around;
+            display: flex;
+        }
+
+        .main-info {
+            text-align: center;
         }
 
         .carousel {
             margin: 0;
             color: #fff;
-            min-height: 100vh;
+            min-height: 75vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -243,7 +292,7 @@ https://github.com/Meirlan1/site
         }
 
         .slider-items>div {
-            height: 240px;
+            max-height: 440px;
             max-width: 200px;
             text-align: center;
             background-color: #ffffff1a;
@@ -255,6 +304,37 @@ https://github.com/Meirlan1/site
 
         .slider-items>div>h1 {
             font-weight: 100;
+        }
+
+        /* Items grid */
+        .product-grid {
+            display: grid;
+            width: 100%;
+            grid-template-columns: auto auto;
+            gap: 10px;
+        }
+
+        .product-grid-item {
+            text-align: center;
+            max-height: 300px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #afafaf20;
+            border-radius: 20px;
+        }
+
+        .product-grid-item:hover {
+            background-color: #afafaf4d;
+            transform: translateY(-10px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .product-grid-item:not(:hover) {
+            transition: all 0.5s ease-in-out;
+        }
+
+        .pc-products {
+            
         }
     </style>
     <link rel="icon" type="image/x-icon" href="icons/gaming-pc-white.png">
@@ -271,28 +351,28 @@ https://github.com/Meirlan1/site
         <nav class="nav">
             <ul class="nav-ul">
 
-                <li>
+                <li class="nav-li">
                     <a href="index.html">
                         <i class="fi fi-rr-home"></i>
                         Home
                     </a>
                 </li>
 
-                <li>
+                <li class="nav-li">
                     <a href="#">
                         <i class="fi fi-rr-memory nav-icon"></i>
                         Products
                     </a>
                 </li>
 
-                <li>
+                <li class="nav-li">
                     <a href="#">
                         <i class="fi fi-rr-percentage nav-icon"></i>
                         Special Offers
                     </a>
                 </li>
 
-                <li>
+                <li class="nav-li">
                     <a href="#">
                         <i class="fi fi-rr-interrogation nav-icon"></i>
                         About
@@ -300,79 +380,153 @@ https://github.com/Meirlan1/site
                 </li>
 
             </ul>
+            <button onclick="navFunc()" class="nav-mobile-icon">
+                HAM
+            </button>
         </nav>
 
     </header>
     
     <div class="main-content">
+        <div class="container">
 
-        <div class="math-info">
+            <div class="main-info">
+                <h1>About Us</h1>
+                
+                <p>Welcome to BuildMaster, your premier destination for high-quality PC parts. As passionate enthusiasts ourselves, we're dedicated to providing top-notch components sourced from trusted manufacturers to meet all your computing needs.</p>
 
-        </div>
+                <p>At BuildMaster, we pride ourselves on our diverse selection, expert guidance, and unwavering commitment to customer satisfaction. Whether you're a seasoned builder or new to PC assembly, our knowledgeable team is here to assist you every step of the way.</p>
+                    
+                <p>Trust BuildMaster to deliver reliability, affordability, and performance, making us your trusted partner in building the ultimate PC setup. Join us and let's elevate your computing experience together!</p>
+            
+            </div>
 
-        <div class="carousel">
-            <h1>What's inside the pc?</h1>
-            <div class="slider">
-                <div class="slider-items">
-                    <div>
-                        <h2>CPU</h2>
-                        <p>Also called a central processor or main processor—is the most important processor in a given computer. Its electronic circuitry executes instructions of a computer program, such as arithmetic, logic, controlling, and input/output (I/O) operations. This role contrasts with that of external components, such as main memory and I/O circuitry,[1] and specialized coprocessors such as graphics processing units (GPUs).</p>
+            <div class="carousel">
+                <h1>In PC</h1>
+                <div class="slider">
+                    <div class="slider-items">
+                        <div>
+                            <h2>CPU</h2>
+                            <p>The CPU, or Central Processing Unit, is the primary component of a computer responsible for executing instructions and performing calculations. It serves as the core "brain" of the system, coordinating the activities of various hardware components to execute tasks and operate the computer.</p>
+                        </div>
+
+                        <div>
+                            <h2>GPU</h2>
+                            <p>GPU stands for Graphics Processing Unit. It's a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device.</p>
+                        </div>
+
+                        <div>
+                            <h2>RAM</h2>
+                            <p>RAM, or Random Access Memory, is a type of computer memory that allows data to be accessed randomly, meaning any byte of memory can be accessed without touching the preceding bytes.</p>
+                        </div>
+
+                        <div>
+                            <h2>ROM</h2>
+                            <p>ROM, or Read-Only Memory, is a type of non-volatile memory that stores data and instructions that are permanently written during the manufacturing process. Unlike RAM, ROM retains its stored information even when the power is turned off.</p>
+                        </div>
+
+                        <div>
+                            <h2>Motherboard</h2>
+                            <p>The motherboard is the main printed circuit board (PCB) in a computer that holds and connects all of the essential components together. It provides the electrical connections between the various components, including the CPU, RAM, storage devices, graphics card, and other peripherals. </p>
+                        </div>
+
+                        <div>
+                            <h2>Cooler</h2>
+                            <p>A cooler, also known as a heat sink and fan (HSF), is a component in a computer that helps dissipate heat generated by the CPU. It typically consists of a metal heat sink, which absorbs and spreads out the heat from the CPU, and a fan that blows air over the heat sink to carry the heat away.</p>
+                        </div>
+
+                        <div>
+                            <h2>Power supply</h2>
+                            <p>The power supply unit (PSU) is a crucial component of a computer system that converts electrical power from a standard outlet into usable power for the computer's components. It provides the necessary voltage and current to all parts of the computer, including the motherboard, CPU, GPU, drives, and peripherals.</p>
+                        </div>
+                        <div>
+                            <h2>Case</h2>
+                            <p>A PC case, also known as a computer chassis or tower, is the enclosure that houses all the internal components of a desktop computer. It provides physical protection for the components while also offering a platform for organization and customization.</p>
+                        </div>
+
+
                     </div>
-
-                    <div>
-                        <h2>GPU</h2>
-                        <p>A graphics processing unit (GPU) is a specialized electronic circuit initially designed to accelerate computer graphics and image processing (either on a video card or embedded on motherboards, mobile phones, personal computers, workstations, and game consoles).</p>
-                    </div>
-
-                    <div>
-                        <h2>RAM</h2>
-                        <p></p>
-                    </div>
-
-                    <div>
-                        <h2>ROM</h2>
-                        <p></p>
-                    </div>
-
-                    <div>
-                        <h2>Motherboard</h2>
-                        <p></p>
-                    </div>
-
-                    <div>
-                        <h2>Cooler</h2>
-                        <p></p>
-                    </div>
-
-                    <div>
-                        <h2>Power supply</h2>
-                    </div>
-
                 </div>
             </div>
+
+            <div class="pc-droducts">
+                <h1>Buy PC's items</h1>
+                <div class="product-grid">
+                    <a href="#" class="product-grid-item">
+                        <h3>Processors</h3>
+                        <p>AMD, Intel</p>
+                    </a>
+                    <a href="#" class="product-grid-item">
+                        <h3>Video Cards</h3>
+                        <p>Nvidia, AMD, Intel</p>
+                        <p>MSI, Asus, Palit</p>
+                    </a>
+                    <a href="#" class="product-grid-item">
+                        <h3>RAMs</h3>
+                        <p>DDR4, DDR5</p>
+                        <p></p>
+                    </a>
+                    <a href="#" class="product-grid-item">
+                        <h3>ROMs</h3>
+                        <p>SSD, M.2, HDD</p>
+                        <p></p>
+                    </a>
+                    <a href="#" class="product-grid-item">
+                        <h3>Motherboards</h3>
+                        <p>AM4, AM5, LGA</p>
+                    </a>
+                    <a href="#" class="product-grid-item">
+                        <h3>Coolers</h3>
+                        <p></p>
+                    </a>
+                    <a href="#" class="product-grid-item">
+                        <h3>Power supplies</h3>
+                        <p></p>
+                    </a>
+                    <a href="#" class="product-grid-item">
+                        <h3>PC cases</h3>
+                        <p></p>
+                    </a>
+                </div>
+            </div>
+            
         </div>
     </div>
 
     <footer class="footer">
+        <div class="container">
 
-        <p class="soc-p">Text</p>
+            <p class="gpt-text">All content and idea were generated by <a href="https://chat.openai.com">ChatGPT</a></p>
+            
+            <ul class="footer-links">
+                <li>
+                    Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
+                </li>
+            </ul>
 
-        <p class="soc-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, perferendis.</p>
-        
-        <ul class="footer-links">
-            <li>
-                Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
-            </li>
-        </ul>
-
-        <ul class="soc-links">
-            <li>
-                <a href="https://github.com/Meirlan1">
-                    <img src="icons/github-mark-white.svg" alt="github-logo">
-                </a>
-            </li>
-        </ul>
-
+            <ul class="soc-links">
+                <li>
+                    <a href="https://github.com/Meirlan1" class="footer-icons">
+                        <i class="fi fi-brands-github"></i>
+                    </a>
+                    <a href="https://twitter.com" class="footer-icons">
+                        <i class="fi fi-brands-twitter-alt"></i>
+                    </a>
+                    <a href="https://facebook.com" class="footer-icons">
+                        <i class="fi fi-brands-facebook"></i>
+                    </a>
+                    <a href="https://whatsapp.com" class="footer-icons">
+                        <i class="fi fi-brands-whatsapp"></i>
+                    </a>
+                    <a href="https://linkedin.com" class="footer-icons">
+                        <i class="fi fi-brands-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com" class="footer-icons">
+                        <i class="fi fi-brands-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </footer>
 
     <script>
@@ -388,6 +542,16 @@ https://github.com/Meirlan1/site
                 carouselInner.style.animation = "move 100s linear infinite";
             });
         });
+
+        function navFunc() {
+            var nav = document.getElementsByClassName(".nav-ul");
+            if (nav.className === "nav") {
+                nav.className += " responsive";
+            }
+            else {
+                nav.className = "nav";
+            }
+        }
     </script>
 </body>
 </html>
