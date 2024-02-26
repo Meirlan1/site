@@ -25,6 +25,13 @@ https://meirlan1.github.io/site
 
         /* GOOGLE FONTS */
         @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+        
+        @keyframes move {
+            to {
+                transform: translate(calc(-50% - 1.5em));
+            }
+        }
+        
         body {
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
@@ -32,10 +39,8 @@ https://meirlan1.github.io/site
             font-style: normal;
         }
 
-        @keyframes move {
-            to {
-                transform: translate(calc(-50% - 1.5em));
-            }
+        ::-webkit-scrollbar {
+            display: none;
         }
 
         :root {
@@ -88,12 +93,6 @@ https://meirlan1.github.io/site
             background-color: rgba(0, 0, 0, 0);
         }
 
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        
         .container {
             width: var(--page-w);
             align-self: center;
@@ -292,7 +291,7 @@ https://meirlan1.github.io/site
             transition: all 0.5s ease-in-out;
         }
     </style>
-
+    
     <link rel="icon" type="image/x-icon" href="https://meirlan1.github.io/site/icons/gaming-pc-white.png">
     <link href="https://meirlan1.github.io/site/uicons/css/all/all.css" rel="stylesheet">
 
@@ -303,7 +302,6 @@ https://meirlan1.github.io/site
             <div class="logo">
                 [Name]
             </div>
-            
             <nav class="nav">
                 <ul class="nav-ul">
                     <li class="nav-li">
@@ -333,13 +331,9 @@ https://meirlan1.github.io/site
         <div class="container">
             <div class="main-info" id="about-us">
                 <h1>About Us</h1>
-                
                 <p>Welcome to [Name], your premier destination for high-quality PC parts. As passionate enthusiasts ourselves, we're dedicated to providing top-notch components sourced from trusted manufacturers to meet all your computing needs.</p>
-
                 <p>At [Name], we pride ourselves on our diverse selection, expert guidance, and unwavering commitment to customer satisfaction. Whether you're a seasoned builder or new to PC assembly, our knowledgeable team is here to assist you every step of the way.</p>
-                    
                 <p>Trust [Name] to deliver reliability, affordability, and performance, making us your trusted partner in building the ultimate PC setup. Join us and let's elevate your computing experience together!</p>
-            
             </div>
 
             <div class="carousel">
@@ -455,7 +449,6 @@ https://meirlan1.github.io/site
                     </a>
                 </div>
             </div>
-            
         </div>
     </div>
 
@@ -521,7 +514,7 @@ https://meirlan1.github.io/site
         let nightMode = true;
 
         function setNightLightMode() {
-            if (!nightMode) {
+            if (nightMode) {
                 body.className = "night-theme";
                 a.forEach((aTag) => {
                     aTag.classList.add("night-theme");
@@ -532,7 +525,7 @@ https://meirlan1.github.io/site
                     containerTag.classList.remove("light-theme");
                 });
             }
-            if (nightMode) {
+            if (!nightMode) {
                 body.className = "light-theme";
                 a.forEach((aTag) => {
                     aTag.classList.add("light-theme");
