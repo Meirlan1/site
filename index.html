@@ -17,7 +17,7 @@ https://github.com/Meirlan1/site
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build Master</title>
+    <title>[Name]</title>
     <style>
 
         /* GOOGLE FONTS */
@@ -29,28 +29,56 @@ https://github.com/Meirlan1/site
             font-style: normal;
         }
 
-
-        @font-face {
-            font-family: Roboto-Regular;
-            src: url("fonts/Roboto-Regular.ttf");
-        }
-
         @keyframes move {
             to {
                 transform: translate(calc(-50% - 1.5em));
             }
         }
 
+        :root {
+            --page-w: 65%;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            background-color: black;
             
-            background: linear-gradient(217deg, rgba(31, 0, 122, 0.5), rgba(0,0,0,0) 70.71%),
-            linear-gradient(127deg, rgba(115, 1, 90, 0.5), rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, rgba(79, 0, 0, 0.5), rgba(0,0,255,0) 70.71%), black;
             min-height: 100vh;
             color: white;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+
+        a.light-theme:visited {
+            color: black;
+        }
+
+        a.night-theme:visited {
+            color: white;
+        }
+
+        body.light-theme {
+            background-color: rgb(182, 182, 182);
+            color: rgb(36, 36, 36);
+        }
+
+        .light-theme {
+            color: rgb(36, 36, 36);
+        }
+
+        .night-theme {
+            background-color: rgba(0, 0, 0, 1);
+            color: white;
+        }
+
+        div.container.light-theme {
+            background-color: white;
+        }
+
+        div.container.night-theme {
+            background-color: rgba(0, 0, 0, 0);
         }
 
 
@@ -58,19 +86,25 @@ https://github.com/Meirlan1/site
             display: none;
         }
 
+        
         .container {
-            width: 80%;
+            width: var(--page-w);
             align-self: center;
+            padding: 15px 30px;
         }
 
         /* Header */
         .header {
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            justify-content: space-between;
+            margin-top: 15px;
             align-items: center;
+            justify-content: space-around;
             display: flex;
+        }
+
+        .h-container {
+            justify-content: space-between;
+            display: flex;
+            width: var(--page-w);
         }
 
         .logo {
@@ -85,6 +119,7 @@ https://github.com/Meirlan1/site
 
         .nav>ul>li {
             display: inline;
+            background-color: #fff;
         }
 
         .nav>ul>li:not(:last-child) {
@@ -92,44 +127,8 @@ https://github.com/Meirlan1/site
         }
 
         .nav>ul>li>a {
-            display: inline-block;
             position: relative;
-            color: #ffffff;
-            text-decoration: none;
-            color: #fff;
         }
-
-        .nav-icon {
-        }
-
-        .nav-mobile-icon {
-            display: none;
-        }
-
-        @media screen and (max-width: 600px) {
-            .nav-ul {
-                display: none;
-            }
-            .nav-mobile-icon {
-                display: block;
-                float: right;
-            }
-        }
-
-        @media screen and (max-width: 600px) {
-            .nav.responsive {position: relative;}
-            .nav.responsive a.nav-mobile-icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-            .nav.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-        }
-
 
         /* Nav hover animation*/
         .nav>ul>li>a::after {
@@ -156,9 +155,7 @@ https://github.com/Meirlan1/site
             align-items: center;
             justify-content: space-around;
             flex-direction: column;
-            color: white;
             display: flex;
-            margin-top: 50px;
         }
 
         .soc-links {
@@ -169,19 +166,26 @@ https://github.com/Meirlan1/site
             list-style: none;
         }
 
-        .soc-links>li>a {
-            text-decoration: none;
-        }
-
-
         .gpt-text {
             font-size: 0.8em;
             margin: 0;
         }
+        .gpt-text>a.light-theme:hover, .footer-links>li>a.light-theme:hover{
+            color: rgb(255, 0, 0);
+            transition: color 0.2s ease-in-out;
+        }
+        .gpt-text>a.light-theme:not(:hover), .footer-links>li>a.light-theme:not(:hover) {
+            color: rgb(0, 0, 0);
+            transition: color 0.2s ease-in-out;
+        }
 
-        .gpt-text>a {
-            text-decoration: none;
-            color: white;
+        .gpt-text>a.night-theme:hover, .footer-links>li>a.night-theme:hover{
+            color: rgb(255, 0, 0);
+            transition: color 0.2s ease-in-out;
+        }
+        .gpt-text>a.night-theme:not(:hover), .footer-links>li>a.night-theme:not(:hover) {
+            color: rgb(255, 255, 255);
+            transition: color 0.2s ease-in-out;
         }
 
         .footer-links {
@@ -189,14 +193,7 @@ https://github.com/Meirlan1/site
             padding-left: 0;
         }
 
-        .footer-links>li>a {
-            text-decoration: none;
-            color: white;
-        }
-
         .footer-icons {
-            text-decoration: none;
-            color: white;
             margin-left: 10px;
             margin-right: 10px;
         }
@@ -205,10 +202,13 @@ https://github.com/Meirlan1/site
             font-size: 25px;
         }
 
+        .theme-changer>a>i {
+            font-size: 25px;
+        }
+
         /* Main content */
 
         .main-content {
-            
             align-items: center;
             justify-content: space-around;
             display: flex;
@@ -220,7 +220,6 @@ https://github.com/Meirlan1/site
 
         .carousel {
             margin: 0;
-            color: #fff;
             min-height: 75vh;
             display: flex;
             justify-content: center;
@@ -229,7 +228,7 @@ https://github.com/Meirlan1/site
         }
 
         .slider {
-            margin: 2em 0;
+            margin-bottom: 2em;
             max-width: 1000px;
             width: 100%;
             overflow: hidden;
@@ -272,15 +271,13 @@ https://github.com/Meirlan1/site
 
         .product-grid-item {
             text-align: center;
-            max-height: 300px;
-            text-decoration: none;
-            color: #fff;
+            max-height: 1000px;
             background-color: #afafaf20;
             border-radius: 20px;
         }
 
         .product-grid-item:hover {
-            background-color: #afafaf4d;
+            background-color: #7676764d;
             transform: translateY(-10px);
             transition: all 0.5s ease-in-out;
         }
@@ -288,72 +285,54 @@ https://github.com/Meirlan1/site
         .product-grid-item:not(:hover) {
             transition: all 0.5s ease-in-out;
         }
-
-        .pc-products {
-            
-        }
     </style>
+
     <link rel="icon" type="image/x-icon" href="icons/gaming-pc-white.png">
     <link href="https://meirlan1.github.io/site/uicons/css/all/all.css" rel="stylesheet">
 
     </head>
 <body>
     <header class="header">
-
-        <div class="logo">
-            BuildMaster
+        <div class="h-container container">
+            <div class="logo">
+                [Name]
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-ul">
+                    <li class="nav-li">
+                        <a href="javascript:void(0)">
+                            <i class="fi fi-rr-home"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="#components">
+                            <i class="fi fi-rr-memory nav-icon"></i>
+                            Components
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="#about-us">
+                            <i class="fi fi-rr-interrogation nav-icon"></i>
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        
-        <nav class="nav">
-            <ul class="nav-ul">
-
-                <li class="nav-li">
-                    <a href="index.html">
-                        <i class="fi fi-rr-home"></i>
-                        Home
-                    </a>
-                </li>
-
-                <li class="nav-li">
-                    <a href="#">
-                        <i class="fi fi-rr-memory nav-icon"></i>
-                        Products
-                    </a>
-                </li>
-
-                <li class="nav-li">
-                    <a href="#">
-                        <i class="fi fi-rr-percentage nav-icon"></i>
-                        Special Offers
-                    </a>
-                </li>
-
-                <li class="nav-li">
-                    <a href="#">
-                        <i class="fi fi-rr-interrogation nav-icon"></i>
-                        About
-                    </a>
-                </li>
-
-            </ul>
-            <button onclick="navFunc()" class="nav-mobile-icon">
-                Button
-            </button>
-        </nav>
-
     </header>
     
     <div class="main-content">
         <div class="container">
-
-            <div class="main-info">
+            <div class="main-info" id="about-us">
                 <h1>About Us</h1>
                 
-                <p>Welcome to BuildMaster, your premier destination for high-quality PC parts. As passionate enthusiasts ourselves, we're dedicated to providing top-notch components sourced from trusted manufacturers to meet all your computing needs.</p>
+                <p>Welcome to [Name], your premier destination for high-quality PC parts. As passionate enthusiasts ourselves, we're dedicated to providing top-notch components sourced from trusted manufacturers to meet all your computing needs.</p>
 
-                <p>At BuildMaster, we pride ourselves on our diverse selection, expert guidance, and unwavering commitment to customer satisfaction. Whether you're a seasoned builder or new to PC assembly, our knowledgeable team is here to assist you every step of the way.</p>
+                <p>At [Name], we pride ourselves on our diverse selection, expert guidance, and unwavering commitment to customer satisfaction. Whether you're a seasoned builder or new to PC assembly, our knowledgeable team is here to assist you every step of the way.</p>
                     
-                <p>Trust BuildMaster to deliver reliability, affordability, and performance, making us your trusted partner in building the ultimate PC setup. Join us and let's elevate your computing experience together!</p>
+                <p>Trust [Name] to deliver reliability, affordability, and performance, making us your trusted partner in building the ultimate PC setup. Join us and let's elevate your computing experience together!</p>
             
             </div>
 
@@ -399,49 +378,74 @@ https://github.com/Meirlan1/site
                             <h2>Case</h2>
                             <p>A PC case, also known as a computer chassis or tower, is the enclosure that houses all the internal components of a desktop computer. It provides physical protection for the components while also offering a platform for organization and customization.</p>
                         </div>
-
-
                     </div>
                 </div>
             </div>
 
-            <div class="pc-droducts">
-                <h1>Buy PC's items</h1>
+            <div class="pc-droducts" id="components">
+                <h1>Buy</h1>
                 <div class="product-grid">
-                    <a href="#" class="product-grid-item">
+                    <a href="javascript:void(0)" class="product-grid-item">
                         <h3>Processors</h3>
-                        <p>AMD, Intel</p>
+
+                        <p>AMD Ryzen 3, 5, 7, 9</p>
+
+                        <p>Intel Core i3, i5, i7, i9</p>
                     </a>
-                    <a href="#" class="product-grid-item">
+                    <a href="javascript:void(0)" class="product-grid-item">
                         <h3>Video Cards</h3>
-                        <p>Nvidia, AMD, Intel</p>
-                        <p>MSI, Asus, Palit</p>
+
+                        <p>Nvidia GeForce GTX 10, 16</p>
+                        <p>Nvidia GeForce RTX 20, 30, 40</p>
+
+                        <p>AMD Radeon RX</p>
+                        <p>AMD Radeon RX Vega</p>
+                        <p>AMD Radeon RX 5000, 6000, 7000</p>
+
+                        <p>Intel Arc 3, 5, 7</p>
                     </a>
-                    <a href="#" class="product-grid-item">
+                    <a href="javascript:void(0)" class="product-grid-item">
                         <h3>RAMs</h3>
-                        <p>DDR4, DDR5</p>
-                        <p></p>
+
+                        <p>Gigabyte</p>
+                        <p>HyperX</p>
+                        <p>Corsair</p>
+                        <p>Samsung</p>
+                        <p>Kingston</p>
                     </a>
-                    <a href="#" class="product-grid-item">
+                    <a href="javascript:void(0)" class="product-grid-item">
                         <h3>ROMs</h3>
-                        <p>SSD, M.2, HDD</p>
-                        <p></p>
+                        <p>Samsung</p>
+                        <p>Seagate</p>
+                        <p>Gigabyte</p>
+                        <p>Toshiba</p>
+                        <p>Kingston</p>
+
                     </a>
-                    <a href="#" class="product-grid-item">
+                    <a href="javascript:void(0)" class="product-grid-item">
                         <h3>Motherboards</h3>
-                        <p>AM4, AM5, LGA</p>
+                        <p>ASRock</p>
+                        <p>Gigabyte</p>
+                        <p>ASUS</p>
+                        <p>MSI</p>
                     </a>
-                    <a href="#" class="product-grid-item">
+                    <a href="javascript:void(0)" class="product-grid-item">
                         <h3>Coolers</h3>
                         <p></p>
                     </a>
-                    <a href="#" class="product-grid-item">
+                    <a href="javascript:void(0)" class="product-grid-item">
                         <h3>Power supplies</h3>
-                        <p></p>
+                        <p>AeroCool</p>
+                        <p>ZALMAN</p>
+                        <p>KCAS</p>
+                        <p>DEEPCOOL</p>
+                        <p>Asus</p>
+                        <p>MSI</p>
+                        <p>Corsair</p>
                     </a>
-                    <a href="#" class="product-grid-item">
+                    <a href="javascript:void(0)" class="product-grid-item">
                         <h3>PC cases</h3>
-                        <p></p>
+                        <p>Lian Li</p>
                     </a>
                 </div>
             </div>
@@ -460,24 +464,28 @@ https://github.com/Meirlan1/site
                 </li>
             </ul>
 
+            <div class="theme-changer">
+                <a href="javascript:void(0)" onclick="changeTheme()"><i class="fi fi-rr-moon"></i></a>
+            </div>
+
             <ul class="soc-links">
                 <li>
                     <a href="https://github.com/Meirlan1" class="footer-icons">
                         <i class="fi fi-brands-github"></i>
                     </a>
-                    <a href="https://twitter.com" class="footer-icons">
+                    <a href="https://twitter.com/MAbdruzak" class="footer-icons">
                         <i class="fi fi-brands-twitter-alt"></i>
                     </a>
                     <a href="https://facebook.com" class="footer-icons">
                         <i class="fi fi-brands-facebook"></i>
                     </a>
-                    <a href="https://whatsapp.com" class="footer-icons">
+                    <a href="https://wa.me/+77086693794" class="footer-icons">
                         <i class="fi fi-brands-whatsapp"></i>
                     </a>
                     <a href="https://linkedin.com" class="footer-icons">
                         <i class="fi fi-brands-linkedin"></i>
                     </a>
-                    <a href="https://instagram.com" class="footer-icons">
+                    <a href="https://instagram.com/meir.cs" class="footer-icons">
                         <i class="fi fi-brands-instagram"></i>
                     </a>
                 </li>
@@ -499,13 +507,52 @@ https://github.com/Meirlan1/site
             });
         });
 
-        function navFunc() {
-            var nav = document.getElementsByClassName(".nav-ul");
-            if (nav.className === "nav") {
-                nav.className += " responsive";
+        let body = document.querySelector("body");
+        let a = document.querySelectorAll("a");
+        let container = document.querySelectorAll(".container");
+
+
+        let nightMode = true;
+
+        function setNight() {
+            body.className = "night-theme";
+            a.forEach((aTag) => {
+                aTag.classList.add("night-theme");
+                aTag.classList.remove("light-theme");
+            });
+            container.forEach((containerTag) => {
+                containerTag.classList.add("night-theme");
+                containerTag.classList.remove("light-theme");
+            });
+        }
+
+        function setLight() {
+            body.className = "light-theme";
+            a.forEach((aTag) => {
+                aTag.classList.add("light-theme");
+                aTag.classList.remove("night-theme");
+            });
+            container.forEach((containerTag) => {
+                containerTag.classList.add("light-theme");
+                containerTag.classList.remove("night-theme");
+            });
+        }
+
+        if (nightMode) {
+            setNight();
+        }
+        else {
+            setLight();
+        }
+
+        function changeTheme() {
+            nightMode = !nightMode;
+
+            if (nightMode) {
+                setNight();
             }
             else {
-                nav.className = "nav";
+                setLight();
             }
         }
     </script>
