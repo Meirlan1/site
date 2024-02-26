@@ -46,6 +46,10 @@ https://github.com/Meirlan1/site
             min-height: 100vh;
             color: white;
         }
+
+        li, ul {
+            list-style: none;
+        }
         
         a {
             text-decoration: none;
@@ -95,7 +99,6 @@ https://github.com/Meirlan1/site
 
         /* Header */
         .header {
-            margin-top: 15px;
             align-items: center;
             justify-content: space-around;
             display: flex;
@@ -112,7 +115,6 @@ https://github.com/Meirlan1/site
         }
 
         .nav>ul {
-            list-style: none;
             padding: 0;
             margin: 0;
         }
@@ -131,6 +133,14 @@ https://github.com/Meirlan1/site
         }
 
         /* Nav hover animation*/
+        .nav>ul>li>a.light-theme::after {
+            background-color: #000000;
+        }
+
+        .nav>ul>li>a.night-theme::after {
+            background-color: #ffffff;
+        }
+
         .nav>ul>li>a::after {
             content: '';
             position: absolute;
@@ -139,7 +149,6 @@ https://github.com/Meirlan1/site
             height: 1.5px;
             bottom: -6px;
             left: 0;
-            background-color: #ffffff;
             transform-origin: bottom right;
             transition: transform 0.38s ease;
         }
@@ -149,7 +158,6 @@ https://github.com/Meirlan1/site
             transform-origin: bottom left;
         }
 
-        /* Footer */
         .footer {
             text-align: center;
             align-items: center;
@@ -160,10 +168,6 @@ https://github.com/Meirlan1/site
 
         .soc-links {
             padding: 0;
-        }
-
-        .soc-links>li {
-            list-style: none;
         }
 
         .gpt-text {
@@ -189,7 +193,6 @@ https://github.com/Meirlan1/site
         }
 
         .footer-links {
-            list-style: none;
             padding-left: 0;
         }
 
@@ -512,7 +515,7 @@ https://github.com/Meirlan1/site
         let container = document.querySelectorAll(".container");
 
 
-        let nightMode = true;
+        let nightMode = false;
 
         function setNight() {
             body.className = "night-theme";
