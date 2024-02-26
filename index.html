@@ -7,8 +7,11 @@ You may use, modify, and distribute this code at your own risk and discretion,
 provided that you retain this copyright notice.
 Please include the author's name, Meirlan, in any derivative works or distributions.
 
-Repository:
+Github repository:
 https://github.com/Meirlan1/site
+
+Github pages:
+https://meirlan1.github.io/site
 
 -->
 
@@ -290,7 +293,7 @@ https://github.com/Meirlan1/site
         }
     </style>
 
-    <link rel="icon" type="image/x-icon" href="icons/gaming-pc-white.png">
+    <link rel="icon" type="image/x-icon" href="https://meirlan1.github.io/site/icons/gaming-pc-white.png">
     <link href="https://meirlan1.github.io/site/uicons/css/all/all.css" rel="stylesheet">
 
     </head>
@@ -434,14 +437,14 @@ https://github.com/Meirlan1/site
                     </a>
                     <a href="javascript:void(0)" class="product-grid-item">
                         <h3>Coolers</h3>
-                        <p></p>
+                        <p>DeepCool</p>
                     </a>
                     <a href="javascript:void(0)" class="product-grid-item">
                         <h3>Power supplies</h3>
                         <p>AeroCool</p>
                         <p>ZALMAN</p>
                         <p>KCAS</p>
-                        <p>DEEPCOOL</p>
+                        <p>DeepCool</p>
                         <p>Asus</p>
                         <p>MSI</p>
                         <p>Corsair</p>
@@ -515,48 +518,39 @@ https://github.com/Meirlan1/site
         let container = document.querySelectorAll(".container");
 
 
-        let nightMode = false;
+        let nightMode = true;
 
-        function setNight() {
-            body.className = "night-theme";
-            a.forEach((aTag) => {
-                aTag.classList.add("night-theme");
-                aTag.classList.remove("light-theme");
-            });
-            container.forEach((containerTag) => {
-                containerTag.classList.add("night-theme");
-                containerTag.classList.remove("light-theme");
-            });
+        function setNightLightMode() {
+            if (!nightMode) {
+                body.className = "night-theme";
+                a.forEach((aTag) => {
+                    aTag.classList.add("night-theme");
+                    aTag.classList.remove("light-theme");
+                });
+                container.forEach((containerTag) => {
+                    containerTag.classList.add("night-theme");
+                    containerTag.classList.remove("light-theme");
+                });
+            }
+            if (nightMode) {
+                body.className = "light-theme";
+                a.forEach((aTag) => {
+                    aTag.classList.add("light-theme");
+                    aTag.classList.remove("night-theme");
+                });
+                container.forEach((containerTag) => {
+                    containerTag.classList.add("light-theme");
+                    containerTag.classList.remove("night-theme");
+                });
+            }
         }
 
-        function setLight() {
-            body.className = "light-theme";
-            a.forEach((aTag) => {
-                aTag.classList.add("light-theme");
-                aTag.classList.remove("night-theme");
-            });
-            container.forEach((containerTag) => {
-                containerTag.classList.add("light-theme");
-                containerTag.classList.remove("night-theme");
-            });
-        }
-
-        if (nightMode) {
-            setNight();
-        }
-        else {
-            setLight();
-        }
+        setNightLightMode()
 
         function changeTheme() {
             nightMode = !nightMode;
 
-            if (nightMode) {
-                setNight();
-            }
-            else {
-                setLight();
-            }
+            setNightLightMode()
         }
     </script>
 </body>
